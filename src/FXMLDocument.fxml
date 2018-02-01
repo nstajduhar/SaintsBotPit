@@ -21,6 +21,5 @@
       </ImageView>
       <Label id="date" fx:id="date" layoutX="198.0" layoutY="368.0" />
       <Label id="time" fx:id="time" layoutX="563.0" layoutY="367.0" />
-      <Label id="currentVideo" fx:id="currentVideo" layoutX="383.0" layoutY="36.0" />
     </children>
 </AnchorPane>
