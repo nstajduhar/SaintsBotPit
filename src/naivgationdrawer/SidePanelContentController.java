@@ -68,11 +68,12 @@ public class SidePanelContentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    	 
+   
     }    
 
     @FXML
     private void changeColor(ActionEvent event) {
+    	
         JFXButton btn = (JFXButton) event.getSource();
         System.out.println(btn.getText());
         switch(btn.getText())
@@ -81,7 +82,8 @@ public class SidePanelContentController implements Initializable {
             if (!promoLoopBool.booleanValue()) {
                 promoLoopBool = Boolean.valueOf(true);
                 try {
-                  currentVideo.setText("Current Video: Promo Loop");
+                	//FXMLDocumentController.setCurrent("Current Video: Promo Loop");
+                  //currentVideo.setText("Current Video: Promo Loop");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
                   pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/promoLoopVideo.mov" });

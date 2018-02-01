@@ -41,7 +41,10 @@ public class FXMLDocumentController implements Initializable {
     private Label date;
     
     @FXML 
-    private static Label currentVideo;
+    private Label currentVideo;
+    
+    @FXML
+    private static String current;
     
     @FXML
     private AnchorPane root;
@@ -53,9 +56,6 @@ public class FXMLDocumentController implements Initializable {
         
         rootP.setStyle("-fx-background-color: #ffff00");
         
-        if ((SidePanelContentController.promoBool.booleanValue()) && (SidePanelContentController.miuBool.booleanValue()) && (SidePanelContentController.staticBool.booleanValue())) {
-            currentVideo.setText("Current Video: ");
-          }
         
         try {
             VBox box = FXMLLoader.load(getClass().getResource("SidePanelContent.fxml"));
@@ -72,6 +72,11 @@ public class FXMLDocumentController implements Initializable {
         
         bindToTime(time);
         date.setText(dtf.format(now));
+        
+        if ((SidePanelContentController.promoBool) && (SidePanelContentController.miuBool) && (SidePanelContentController.staticBool) == false) {
+          currentVideo.setText(getCurrent());
+        }
+        
         
         HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hamburger);
         transition.setRate(-1);
@@ -90,6 +95,7 @@ public class FXMLDocumentController implements Initializable {
     private void bindToTime(final Label time) {
         Timeline timeline = new Timeline(new KeyFrame[]{new KeyFrame(Duration.seconds((double)0.0), (EventHandler)new EventHandler<ActionEvent>(){
 
+        	
             public void handle(ActionEvent actionEvent) {
                 Calendar timeNow = Calendar.getInstance();
                 String hourString = StringUtilities.pad(2, ' ', timeNow.get(10) == 0 ? "12" : String.valueOf(timeNow.get(10)));
@@ -102,5 +108,13 @@ public class FXMLDocumentController implements Initializable {
         timeline.setCycleCount(-1);
         timeline.play();
     }
+    
+	public static String getCurrent() {
+		return current;
+	}
 
+	public static void setCurrent(String current) {
+		FXMLDocumentController.current = current;
+		System.out.print(getCurrent());
+	}
 }
