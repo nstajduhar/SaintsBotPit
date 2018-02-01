@@ -38,6 +38,19 @@ import javafx.stage.Stage;
 
 
 public class SidePanelContentController implements Initializable {
+	
+	
+	/**
+	 * @author Nick Stajduhar
+	 * @category Utility
+	 * Version 2.0 rev4
+	 * 
+	 * This program is made for the St. Anne High School robotics team "Saints Bot".
+	 *
+	 * PitControl is the control panel for their pit in the classroom and at district events
+	 * 
+	 * Copyright 2018 Nick Stajduhar All Rights Reserved
+	 */
 
 	  public ProcessBuilder pb;
 	  public ProcessBuilder pbStop;
