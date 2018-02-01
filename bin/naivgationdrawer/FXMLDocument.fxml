@@ -14,7 +14,7 @@
     <children>
       <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" layoutY="-6.0" prefHeight="368.0" prefWidth="108.0" />
       <JFXHamburger fx:id="hamburger" layoutX="740.0" layoutY="34.0" />
-      <ImageView blendMode="OVERLAY" fitHeight="238.0" fitWidth="390.0" layoutX="210.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="238.0" fitWidth="390.0" layoutX="210.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="images/logo.png" />
          </image>

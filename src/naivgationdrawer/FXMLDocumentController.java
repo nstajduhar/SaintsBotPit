@@ -73,11 +73,7 @@ public class FXMLDocumentController implements Initializable {
         bindToTime(time);
         date.setText(dtf.format(now));
         
-        if ((SidePanelContentController.promoBool) && (SidePanelContentController.miuBool) && (SidePanelContentController.staticBool) == false) {
-          currentVideo.setText(getCurrent());
-        }
-        
-        
+       
         HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(hamburger);
         transition.setRate(-1);
         hamburger.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)->{
