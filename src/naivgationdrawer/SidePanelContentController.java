@@ -4,37 +4,15 @@ import com.jfoenix.controls.JFXButton;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.ResourceBundle;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
+
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.util.Duration;
-import java.io.PrintStream;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+
 
 
 public class SidePanelContentController implements Initializable {
@@ -95,6 +73,14 @@ public class SidePanelContentController implements Initializable {
             if (!promoLoopBool.booleanValue()) {
                 promoLoopBool = Boolean.valueOf(true);
                 try {
+                	//Setting all bools to false allowing videos to start with one tap rather than multiple
+                	 miuBool = Boolean.valueOf(false);
+                     staticBool = Boolean.valueOf(false);
+                     doNotBool = Boolean.valueOf(false);
+                     hiddenBool = Boolean.valueOf(false);
+                     safetyBypassBool = Boolean.valueOf(false);
+                     promoBool = Boolean.valueOf(false);
+                	
                   currentVideo.setText("Current Video: Promo Loop");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
@@ -113,6 +99,7 @@ public class SidePanelContentController implements Initializable {
                   process = pb.start();
                   currentVideo.setText("Current Video: ");
                   promoLoopBool = Boolean.valueOf(false);
+                  
                 }
                 catch (IOException e1)
                 {
@@ -125,6 +112,13 @@ public class SidePanelContentController implements Initializable {
             if (!miuBool.booleanValue()) {
                 miuBool = Boolean.valueOf(true);
                 try {
+                	//Setting all bools to false allowing videos to start with one tap rather than multiple
+                    staticBool = Boolean.valueOf(false);
+                    doNotBool = Boolean.valueOf(false);
+                    hiddenBool = Boolean.valueOf(false);
+                    safetyBypassBool = Boolean.valueOf(false);
+                    promoBool = Boolean.valueOf(false);
+                    promoLoopBool = Boolean.valueOf(false);
                   currentVideo.setText("Current Video: Machine In Use");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
@@ -155,7 +149,14 @@ public class SidePanelContentController implements Initializable {
             if (!staticBool.booleanValue()) {
                 staticBool = Boolean.valueOf(true);
                 try {
-                  currentVideo.setText("Current Video: Static Logo Intro");
+                	//Setting all bools to false allowing videos to start with one tap rather than multiple
+               	 miuBool = Boolean.valueOf(false);
+                    promoLoopBool = Boolean.valueOf(false);
+                    doNotBool = Boolean.valueOf(false);
+                    hiddenBool = Boolean.valueOf(false);
+                    safetyBypassBool = Boolean.valueOf(false);
+                    promoBool = Boolean.valueOf(false);
+                  currentVideo.setText("Current Video: Static Intro");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
                   pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/staticVideo.mov" });
@@ -186,6 +187,13 @@ public class SidePanelContentController implements Initializable {
             if (!promoBool.booleanValue()) {
                 promoBool = Boolean.valueOf(true);
                 try {
+                	//Setting all bools to false allowing videos to start with one tap rather than multiple
+               	 miuBool = Boolean.valueOf(false);
+                    staticBool = Boolean.valueOf(false);
+                    doNotBool = Boolean.valueOf(false);
+                    hiddenBool = Boolean.valueOf(false);
+                    safetyBypassBool = Boolean.valueOf(false);
+                    promoLoopBool = Boolean.valueOf(false);
                   currentVideo.setText("Current Video: Girls in STEM");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
@@ -216,6 +224,13 @@ public class SidePanelContentController implements Initializable {
                 	if (!safetyBypassBool.booleanValue()) {
                         safetyBypassBool = Boolean.valueOf(true);
                         try {
+                        	//Setting all bools to false allowing videos to start with one tap rather than multiple
+                       	 miuBool = Boolean.valueOf(false);
+                            staticBool = Boolean.valueOf(false);
+                            doNotBool = Boolean.valueOf(false);
+                            hiddenBool = Boolean.valueOf(false);
+                            promoLoopBool = Boolean.valueOf(false);
+                            promoBool = Boolean.valueOf(false);
                           currentVideo.setText("Current Video: Safety Video");
                           pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                           processStop = pbStop.start();

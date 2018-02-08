@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -12,14 +13,20 @@
 
 <AnchorPane id="AnchorPane" fx:id="root" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="naivgationdrawer.FXMLDocumentController">
     <children>
-      <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" layoutY="-6.0" prefHeight="368.0" prefWidth="108.0" />
-      <JFXHamburger fx:id="hamburger" layoutX="740.0" layoutY="34.0" />
       <ImageView fitHeight="238.0" fitWidth="390.0" layoutX="210.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="images/logo.png" />
          </image>
       </ImageView>
-      <Label id="date" fx:id="date" layoutX="198.0" layoutY="368.0" />
-      <Label id="time" fx:id="time" layoutX="563.0" layoutY="367.0" />
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" layoutY="-6.0" prefHeight="368.0" prefWidth="108.0" />
+      <JFXHamburger fx:id="hamburger" layoutX="740.0" layoutY="34.0" />
+      <Label id="date" fx:id="date" layoutX="150.0" layoutY="367.0" prefHeight="33.0" prefWidth="13.0">
+         <font>
+            <Font name="Marker Felt Wide" size="24.0" />
+         </font></Label>
+      <Label id="time" fx:id="time" layoutX="627.0" layoutY="369.0" prefHeight="31.0" prefWidth="10.0" textAlignment="CENTER">
+         <font>
+            <Font name="Marker Felt Thin" size="24.0" />
+         </font></Label>
     </children>
 </AnchorPane>
