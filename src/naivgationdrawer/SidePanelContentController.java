@@ -84,7 +84,7 @@ public class SidePanelContentController implements Initializable {
                   currentVideo.setText("Current Video: Promo Loop");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
-                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/promoLoopVideo.mov" });
+                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1900 1050\" --display=5 --no-osd --loop /home/pi/Videos/promoLoopVideo.mov" });
                   process = pb.start();
                 }
                 catch (IOException e1)
@@ -122,7 +122,7 @@ public class SidePanelContentController implements Initializable {
                   currentVideo.setText("Current Video: Machine In Use");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
-                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/miuVideo.mov" });
+                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1900 1050\" --display=5 --no-osd --loop /home/pi/Videos/miuVideo.mov" });
                   process = pb.start();
                 }
                 catch (IOException e1)
@@ -159,7 +159,7 @@ public class SidePanelContentController implements Initializable {
                   currentVideo.setText("Current Video: Static Intro");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
-                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/staticVideo.mov" });
+                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1900 1050\" --display=5 --no-osd --loop /home/pi/Videos/staticVideo.mov" });
                   process = pb.start();
                 }
                 catch (IOException e1)
@@ -197,7 +197,7 @@ public class SidePanelContentController implements Initializable {
                   currentVideo.setText("Current Video: Girls in STEM");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
-                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/promoVideo.mov" });
+                  pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1900 1050\" --display=5 --no-osd --loop /home/pi/Videos/promoVideo.mov" });
                   process = pb.start();
                 }
                 catch (IOException e1)
@@ -234,7 +234,7 @@ public class SidePanelContentController implements Initializable {
                           currentVideo.setText("Current Video: Safety Video");
                           pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                           processStop = pbStop.start();
-                          pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1920 1080\" --display=5 --no-osd --loop /home/pi/Videos/safetyBypass.mov" });
+                          pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1900 1050\" --display=5 --no-osd --loop /home/pi/Videos/safetyBypass.mov" });
                           process = pb.start();
                         }
                         catch (IOException e1)
