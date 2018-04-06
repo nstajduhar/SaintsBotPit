@@ -19,6 +19,7 @@
       </ImageView>
       <Label id="currentVideo" fx:id="currentVideo" />
       <JFXButton fx:id="b1" buttonType="RAISED" onAction="#changeColor" prefHeight="74.0" prefWidth="250.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Promo Loop" />
+      <JFXButton fx:id="b11" buttonType="RAISED" onAction="#changeColor" prefHeight="74.0" prefWidth="250.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Sponsor Video" />
       <JFXButton fx:id="b2" buttonType="RAISED" layoutX="10.0" layoutY="123.0" onAction="#changeColor" prefHeight="74.0" prefWidth="250.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Machine In Use" />
       <JFXButton fx:id="b3" buttonType="RAISED" layoutX="10.0" layoutY="197.0" onAction="#changeColor" prefHeight="74.0" prefWidth="250.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Static" />
       <JFXButton fx:id="b4" buttonType="RAISED" layoutX="10.0" layoutY="197.0" onAction="#changeColor" prefHeight="74.0" prefWidth="250.0" ripplerFill="#fc0000" style="-fx-background-color: #f1f1f1;" text="Promo" />

@@ -36,6 +36,7 @@ public class SidePanelContentController implements Initializable {
 	  public Process processStop;
 	  public static Boolean promoBool = Boolean.valueOf(false);
 	  public static Boolean miuBool = Boolean.valueOf(false);
+	  public static Boolean sponsorBool = Boolean.valueOf(false);
 	  public static Boolean staticBool = Boolean.valueOf(false);
 	  public static Boolean doNotBool = Boolean.valueOf(false);
 	  public static Boolean hiddenBool = Boolean.valueOf(false);
@@ -52,6 +53,8 @@ public class SidePanelContentController implements Initializable {
     private JFXButton b4;
     @FXML
     private JFXButton b5;
+    @FXML
+    private JFXButton b11;
     @FXML
     private Label currentVideo;
     @FXML
@@ -80,6 +83,7 @@ public class SidePanelContentController implements Initializable {
                      hiddenBool = Boolean.valueOf(false);
                      safetyBypassBool = Boolean.valueOf(false);
                      promoBool = Boolean.valueOf(false);
+                     sponsorBool = false;
                 	
                   currentVideo.setText("Current Video: Promo Loop");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
@@ -119,6 +123,7 @@ public class SidePanelContentController implements Initializable {
                     safetyBypassBool = Boolean.valueOf(false);
                     promoBool = Boolean.valueOf(false);
                     promoLoopBool = Boolean.valueOf(false);
+                    sponsorBool = false;
                   currentVideo.setText("Current Video: Machine In Use");
                   pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
                   processStop = pbStop.start();
@@ -145,6 +150,44 @@ public class SidePanelContentController implements Initializable {
                 
               }
                 break;
+            case "Sponsor Video":
+                if (!sponsorBool.booleanValue()) {
+                    sponsorBool = Boolean.valueOf(true);
+                    try {
+                    	//Setting all bools to false allowing videos to start with one tap rather than multiple
+                        staticBool = Boolean.valueOf(false);
+                        doNotBool = Boolean.valueOf(false);
+                        miuBool = false;
+                        hiddenBool = Boolean.valueOf(false);
+                        safetyBypassBool = Boolean.valueOf(false);
+                        promoBool = Boolean.valueOf(false);
+                        promoLoopBool = Boolean.valueOf(false);
+                      currentVideo.setText("Current Video: Sponsor Video");
+                      pbStop = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
+                      processStop = pbStop.start();
+                      pb = new ProcessBuilder(new String[] { "bash", "-c", "omxplayer --win \"0 0 1900 1050\" --display=5 --no-osd --loop /home/pi/Videos/sponsorVideo.mov" });
+                      process = pb.start();
+                    }
+                    catch (IOException e1)
+                    {
+                      e1.printStackTrace();
+                    }
+                    
+                  }
+                  else if (sponsorBool.booleanValue()) {
+                    try {
+                      pb = new ProcessBuilder(new String[] { "bash", "-c", "sudo killall omxplayer.bin" });
+                      process = pb.start();
+                      currentVideo.setText("Current Video: ");
+                      sponsorBool = Boolean.valueOf(false);
+                    }
+                    catch (IOException e1)
+                    {
+                      e1.printStackTrace();
+                    }
+                    
+                  }
+                    break;
             case "Static":
             if (!staticBool.booleanValue()) {
                 staticBool = Boolean.valueOf(true);
