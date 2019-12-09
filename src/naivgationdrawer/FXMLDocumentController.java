@@ -125,4 +125,32 @@ public class FXMLDocumentController implements Initializable {
 		FXMLDocumentController.current = current;
 		System.out.print(getCurrent());
 	}
+	
+	private final Content content1= ContentBuilder.create()
+            .color(Content.MatrixColor.RGB)
+            .type(Content.Type.IMAGE)
+            .origin(0, 1)
+            .area(0, 0, 184, 74)
+            .bmpName("/jfxtras/labs/samples/matrixpanel/Javafx-logo.bmp")
+            .effect(Content.Effect.SCROLL_DOWN).lapse(20)
+            .postEffect(Content.PostEffect.PAUSE).pause(3000)
+            .build();
+	private final Content content2=ContentBuilder.create()
+            .color(Content.MatrixColor.BLUE)
+            .type(Content.Type.TEXT)
+            .origin(0, 1)
+            .area(0, 75, 250, 100)
+            .txtContent("HELLO JAVAFX SAMPLES!!!   ")
+            .font(Content.MatrixFont.FF_10x16)
+            .fontGap(Content.Gap.DOUBLE)
+            .align(Content.Align.RIGHT)
+            .effect(Content.Effect.SCROLL_LEFT).lapse(20)
+            .postEffect(Content.PostEffect.PAUSE).pause(1000)
+            .order(Content.RotationOrder.FIRST).clear(false)
+            .build();
+	private final MatrixPanel panel = MatrixPanelBuilder.create()
+        .ledWidth(184).ledHeight(100).prefWidth(1050d).prefHeight(1050d)
+        .frameVisible(true).frameDesign(MatrixPanel.FrameDesign.SHINY_METAL)
+        .frameCustomPath("/jfxtras/labs/samples/matrixpanel/black.jpg")
+        .frameBaseColor(Color.ALICEBLUE).contents(new Content[] {content1,content2}).build();
 }
